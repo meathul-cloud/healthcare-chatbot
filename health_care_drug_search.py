@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import os
 from langchain_community.document_loaders.csv_loader import CSVLoader
+# Try this if the first one fails after installation:
+# from langchain.document_loaders.csv_loader import CSVLoader --check 1 --not required
 # from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
