@@ -6,7 +6,27 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_community.llms import HuggingFacePipeline # New LLM Import
-from langchain.chains import RetrievalQA # New Chain Import
+# from langchain.chains import RetrievalQA # New Chain Import
+# from langchain.chains.retrieval_qa.base import RetrievalQA
+# from langchain.chains import RetrievalQAWithSourcesChain
+# from langchain.chains.retrieval import RetrievalQAWithSourcesChain
+# from langchain.chains.retrieval import create_retrieval_chain
+# from langchain.chains import create_retrieval_chain
+# from langchain.chains.retrieval_qa.base import RetrievalQA
+# from langchain.chains import RetrievalQA
+# from langchain.chains import create_retrieval_chain
+# from langchain_core.prompts import ChatPromptTemplate
+# from langchain_core.runnables import RunnablePassthrough
+# from langchain.chains.combine_documents import create_retrieval_chain
+# from langchain.chains.retrieval import create_retrieval_chain
+# from langchain.chains import RunnableSequence
+from langchain_core.runnables import RunnableSequence
+
+
+
+
+
+
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, pipeline # New Hugging Face Imports
 
 
@@ -24,7 +44,7 @@ LLM_MODEL_NAME = "google/flan-t5-small" # The LLM for generation (using the 'sma
 # --- RAG COMPONENT FUNCTIONS ---
 
 @st.cache_resource
-def get_llm_chain(vector_db):
+def get_llm_chain(_vector_db):
     """Loads FLAN-T5 and sets up the RetrievalQA chain."""
    
     st.info("4. Loading FLAN-T5 model (this may take a minute the first time)...")
